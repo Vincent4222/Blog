@@ -1,0 +1,242 @@
+/* Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter Tight', sans-serif;
+    background-color: #f8f8f4;
+    color: #333;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.menu a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #5a7a3d;
+    font-weight: 600;
+}
+
+/* Section Blog */
+.blog {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: #eaf0e4;
+}
+
+.blog h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #5a7a3d;
+}
+
+.blog p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Section Recettes */
+.recettes {
+    background-color: #cdd7ae;
+    padding: 2rem;
+}
+
+.recettes h3 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    color: #374d1a;
+}
+
+/* Grille Recettes */
+.grille-recettes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.carte-recette {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, border 0.3s ease;
+    position: relative;
+}
+
+.carte-recette:hover, .carte-recette:focus-within {
+    transform: translateY(-5px);
+    border: 2px solid #5a7a3d;
+}
+
+.carte-recette img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.contenu-carte {
+    padding: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* textes au survol */
+.carte-recette:hover .contenu-carte, .carte-recette:focus-within .contenu-carte {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lien-recette {
+    display: inline-flex;
+    align-items: center;
+    color: #5a7a3d;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.lien-recette span {
+    margin-left: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.lien-recette:hover span {
+    transform: translateX(5px);
+}
+
+.lien-recette:focus {
+    outline: 2px solid #5a7a3d;
+}
+
+/* Footer */
+footer {
+    background-color: #212817;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .grille-recettes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grille-recettes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* page  détail */
+.contenu-recette {
+    display: grid;
+    grid-template-columns: 1fr 400px;  
+    gap: 2rem;
+    padding: 2rem;
+    align-items: start;
+}
+
+/* Contenu texte recette */
+.texte-recette {
+    max-width: 100%;
+}
+
+/* Bloc image sticky */
+.image-sticky {
+    position: sticky;
+    top: 1rem;
+    align-self: start;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    height: fit-content;
+}
+
+.image-sticky img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive mobile*/
+@media (max-width: 768px) {
+    .contenu-recette {
+        grid-template-columns: 1fr;  
+    }
+
+    .image-sticky {
+        position: static; 
+        width: 100%;
+    }
+}
+
+/* Layout principal */
+.contenu-recette {
+    display: grid;
+    grid-template-columns: 1fr 400px;  
+    gap: 2rem;
+    padding: 2rem;
+    align-items: start;
+}
+
+/* Texte recette */
+.texte-recette {
+    max-width: 100%;
+}
+
+/* Image sticky */
+.image-sticky {
+    position: sticky;
+    top: 1rem;
+    align-self: start;  
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    height: fit-content;  
+}
+
+.image-sticky img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mobile*/
+@media (max-width: 768px) {
+    .contenu-recette {
+        grid-template-columns: 1fr; 
+    }
+
+    .image-sticky {
+        position: static;  
+        width: 100%;
+    }
+}
