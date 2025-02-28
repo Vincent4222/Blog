@@ -236,7 +236,7 @@ footer {
     }
 
     .image-sticky {
-        position: static;  
+        position: sticky;  
         width: 100%;
     }
 }
